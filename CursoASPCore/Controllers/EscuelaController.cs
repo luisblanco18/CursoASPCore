@@ -15,6 +15,10 @@ namespace CursoASPCore.Controllers
             escuela.UniqueId = Guid.NewGuid().ToString();
             escuela.Nombre = "Platzi School";
             escuela.AñoDeCreación = 2021;
+            escuela.Ciudad = "La Paz";
+            escuela.Pais = "Bolivia";
+            escuela.Dirección = "Av. Siempre Viva";
+            escuela.TipoEscuela = TiposEscuela.Secundaria;
             ViewBag.CosaDinamica = "La monja";
             return View(escuela);
         }
