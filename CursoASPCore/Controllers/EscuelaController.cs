@@ -12,9 +12,9 @@ namespace CursoASPCore.Controllers
         public IActionResult Index()
         {
             var escuela = new Escuela();
-            escuela.EscuelaId = Guid.NewGuid().ToString();
+            escuela.UniqueId = Guid.NewGuid().ToString();
             escuela.Nombre = "Platzi School";
-            escuela.AñoFundacion = 2021;
+            escuela.AñoDeCreación = 2021;
             ViewBag.CosaDinamica = "La monja";
             return View(escuela);
         }
