@@ -9,18 +9,16 @@ namespace CursoASPCore.Controllers
 {
     public class EscuelaController : Controller
     {
+        private EscuelaContext _context;
         public IActionResult Index()
         {
-            var escuela = new Escuela();
-            escuela.UniqueId = Guid.NewGuid().ToString();
-            escuela.Nombre = "Platzi School";
-            escuela.AñoDeCreación = 2021;
-            escuela.Ciudad = "La Paz";
-            escuela.Pais = "Bolivia";
-            escuela.Dirección = "Av. Siempre Viva";
-            escuela.TipoEscuela = TiposEscuela.Secundaria;
             ViewBag.CosaDinamica = "La monja";
+            var escuela = _context.Escuelas.FirstOrDefault();
             return View(escuela);
+        }
+        public EscuelaController(EscuelaContext context)
+        {
+            _context = context;
         }
     }
 }
