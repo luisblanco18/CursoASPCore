@@ -18,20 +18,21 @@ namespace CursoASPCore
             //CreateHostBuilder(args).Build().Run();
             var host = CreateHostBuilder(args).Build();
 
-            var scope = host.Services.CreateScope();
-            var services = scope.ServiceProvider;
-
-            try
+            using (var scope = host.Services.CreateScope())
             {
-                var context = services.GetRequiredService<EscuelaContext>();
-                context.Database.EnsureCreated();
-            }
-            catch (Exception ex)
-            {
-                var logger = services.GetRequiredService<ILogger<Program>>();
-                logger.LogError(ex, "Ocurrio un error");
-            }
+                var services = scope.ServiceProvider;
+                try
+                {
+                    var context = services.GetRequiredService<EscuelaContext>();
+                    context.Database.EnsureCreated();
+                }
+                catch (Exception ex)
+                {
+                    var logger = services.GetRequiredService<ILogger<Program>>();
+                    logger.LogError(ex, "Ocurrio un error");
+                }
 
+            }
 
             host.Run();
         }
