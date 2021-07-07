@@ -1,7 +1,7 @@
 ﻿@model Curso
+
 @{
-    ViewData["Title"] = "Creación de Curso";
-    Layout = "Simple";
+    ViewData["Title"] = "Edición de Curso";
 }
 
 <h1>@ViewData["Title"] </h1>
@@ -12,20 +12,24 @@
         <label asp-for="Nombre"></label>
         <input asp-for="Nombre" />
     </div>
+
     <div>
         <label asp-for="Dirección"></label>
         <input asp-for="Dirección" />
     </div>
+
     <div>
         <label asp-for="Jornada"></label>
-       @Html.DropDownList(
-       "Jornada", Html.GetEnumSelectList<TiposJornada>(),
-       "Seleccione una jornada",
-       new {@class ="form-control" }
-       )
+        @Html.DropDownList(
+            "Jornada",
+            Html.GetEnumSelectList<TiposJornada>(),
+            "Seleccione una jornada",
+            new
+            {
+                @class = "form-control"
+            }
+        )
     </div>
+
     <input type="submit" />
 </form>
-
-
-<p><i>@ViewBag.Fecha</i></p>

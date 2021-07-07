@@ -2,13 +2,14 @@
 
 @{
     ViewData["Title"] = "Información Cursos";
+    ViewData["Controller"] = "curso";
     Layout = "Simple";
 }
 
 <h1>@ViewData["Title"]</h1>
 
-<strong>Desde la vista parcial</strong>
-
+<strong>Desde la vista parcial</strong><br />
+<partial name="btnCreate" />
 <partial name="ListaObjetoEscuela" />
 
 <p><i>@ViewBag.Fecha</i></p>
