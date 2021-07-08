@@ -9,12 +9,18 @@
 <div asp-validation-summary="All"></div>
 <form method="post">
     <div>
-        <label asp-for="Nombre"></label>
-        <input asp-for="Nombre" />
+        @*<label asp-for="Nombre"></label>
+        <input asp-for="Nombre" />*@
+        @Html.LabelFor(x => x.Nombre)
+        @Html.TextBoxFor(x => x.Nombre)
+        @Html.ValidationMessageFor(x => x.Nombre)
     </div>
     <div>
-        <label asp-for="Dirección"></label>
-        <input asp-for="Dirección" />
+        @*<label asp-for="Dirección"></label>
+        <input asp-for="Dirección" />*@
+        @Html.LabelFor(x => x.Dirección)
+        @Html.TextBoxFor(x => x.Dirección)
+        @Html.ValidationMessageFor(x => x.Dirección)
     </div>
     <div>
         <label asp-for="Jornada"></label>

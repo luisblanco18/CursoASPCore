@@ -40,7 +40,7 @@ namespace CursoASPCore.Models
             var alumnos = CargarAlumnos(cursos);
 
             //x cada Evaluacion cargar alumnos y asignatura
-            var evaluaciones = CargarEvaluaciones(cursos,asignaturas,alumnos);
+            var evaluaciones = CargarEvaluaciones(cursos, asignaturas, alumnos);
 
             modelBuilder.Entity<Escuela>().HasData(escuela);
             modelBuilder.Entity<Curso>().HasData(cursos.ToArray());
@@ -93,11 +93,12 @@ namespace CursoASPCore.Models
                             Id = Guid.NewGuid().ToString(),
                             EscuelaId = escuela.Id,
                             Nombre = "101",
+                            Dirección = "Avenida Siempre viva",
                             Jornada = TiposJornada.Mañana },
-                        new Curso{Id = Guid.NewGuid().ToString(),EscuelaId = escuela.Id, Nombre = "201", Jornada = TiposJornada.Mañana},
-                        new Curso{Id = Guid.NewGuid().ToString(),EscuelaId = escuela.Id, Nombre = "301", Jornada = TiposJornada.Mañana},
-                        new Curso{Id = Guid.NewGuid().ToString(),EscuelaId = escuela.Id, Nombre = "401", Jornada = TiposJornada.Tarde},
-                        new Curso{Id = Guid.NewGuid().ToString(),EscuelaId = escuela.Id, Nombre = "501", Jornada = TiposJornada.Tarde},
+                        new Curso{Id = Guid.NewGuid().ToString(),EscuelaId = escuela.Id, Nombre = "201",Dirección = "Avenida Siempre viva", Jornada = TiposJornada.Mañana},
+                        new Curso{Id = Guid.NewGuid().ToString(),EscuelaId = escuela.Id, Nombre = "301",Dirección = "Avenida Siempre viva", Jornada = TiposJornada.Mañana},
+                        new Curso{Id = Guid.NewGuid().ToString(),EscuelaId = escuela.Id, Nombre = "401",Dirección = "Avenida Siempre viva", Jornada = TiposJornada.Tarde},
+                        new Curso{Id = Guid.NewGuid().ToString(),EscuelaId = escuela.Id, Nombre = "501",Dirección = "Avenida Siempre viva", Jornada = TiposJornada.Tarde},
             };
         }
 

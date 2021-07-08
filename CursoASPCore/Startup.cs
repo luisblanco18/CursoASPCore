@@ -26,9 +26,15 @@ namespace CursoASPCore
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            //services.AddDbContext<EscuelaContext>(
+            //        options => options.UseInMemoryDatabase(databaseName:"testDB")
+            //    );
+
+            string connString = ConfigurationExtensions.GetConnectionString(this.Configuration, "DefaultConnectionString");
+
             services.AddDbContext<EscuelaContext>(
-                    options => options.UseInMemoryDatabase(databaseName:"testDB")
-                );
+                options => options.UseSqlServer(connString)
+            );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
